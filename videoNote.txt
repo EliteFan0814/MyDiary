@@ -1,0 +1,46 @@
+类型转换
+
+其他类型转number
+Number()
+parseInt()
+parseFloat()
+转换对象 - 0
+
+其他类型转string
+toString()
+String()
+转换对象 + ''
++ 转换对象【取正】
+
+其他类型转boolean
+Boolean()
+!!转换对象
+
+0 
+NaN
+''
+null
+undefined
+这5个转换为Boolean值为false
+
+var a = {self: a}
+console.log(a.self) // undefined
+上面代码理解为：
+var a
+a = {self: a} // 此时将右边大括号赋值给 a 的时候，大括号中的 a 因为在前一步未赋值，所以 a 此时为undefined
+
+var a = {}
+a.self = a // 这句执行完，就可以无限调用 a.self.self.self.self...
+
+var a = {n: 1}
+var b = a
+a.x = a = {n: 2} //此处先获取a.x 然后执行 a = {n: 2} 最后执行 a.x = (a = {n: 2})
+console.log(a.x) // undefined
+console.log(b.x) // [object Object]
+
+var a = {n: 1}
+var b = a
+a = {n: 2}
+a.x = a
+console.log(a.x) // [object Object]
+console.log(b.x) // undefined
