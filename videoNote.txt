@@ -44,3 +44,13 @@ a = {n: 2}
 a.x = a
 console.log(a.x) // [object Object]
 console.log(b.x) // undefined
+
+如果一个对象没有被引用，它就是垃圾，就需要被回收。
+
+var fn = function(){}
+document.body.onclick = fn
+fn = null
+问：fn所指向的function是不是垃圾
+答：不是垃圾，因为它被document.body.onclick所引用
+
+早期IE浏览器的垃圾回收BUG，导致内存泄漏，只有完全关闭IE浏览器才能清除。
