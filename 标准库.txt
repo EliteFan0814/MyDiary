@@ -1,0 +1,48 @@
+Object(1)
+ Number {1}
+new Object(1)
+ Number {1}
+Object('hei')
+ String {"hei"}
+new Object('hei')
+ String {"hei"}
+ 
+String('haha')
+ "haha"
+new String('haha')
+ String {"haha"}
+ 
+Number() String() Boolean() 三种，不加 new 返回基本数据类型，加 new 返回相应的对象
+Array() 为代表的的对象，加不加 new 都返回相应的对象。
+
+var f = function(a,b){
+	return a+b
+}
+f(1,2)
+3
+
+var f1 = new Function('a','b','return a+b')
+f1(1,2)
+3
+
+var a = [0,,,,2,undefined,null,{name: 'fpc'}]
+a
+(8) [0, empty × 3, 2, undefined, null, {…}]
+	0: 0
+	4: 2
+	5: undefined
+	6: null
+	7: {name: "fpc"}
+	length: 8
+	__proto__: Array(0)
+	
+arr.forEach的本质
+var obj = {0:'1',1:'2',length: 2}
+obj.forEach = function(x){
+	for(let i = 0;i < this.length;i++){
+		x(this[i],i)
+	}
+}
+obj.forEach(function(value,key){console.log(value,key)})
+ 1 0
+ 2 1
