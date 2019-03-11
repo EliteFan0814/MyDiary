@@ -46,3 +46,12 @@ obj.forEach = function(x){
 obj.forEach(function(value,key){console.log(value,key)})
  1 0
  2 1
+ 
+ ---------------------------------
+ join()
+ concat()
+ map()
+ forEach()
+ sort()
+ fillter()
+ reduce()
