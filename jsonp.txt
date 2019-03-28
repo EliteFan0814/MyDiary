@@ -1,0 +1,18 @@
+JSONP
+请求方
+响应方
+
+1.请求方创建 script src 指向响应方，同时传递查询参数 ?callback=xxx
+2.响应方根据查询参数callback，构造形如：
+  xxx.call(undefine,'需要的数据')   或   xxx.('需要的数据')
+这样的响应
+3.浏览器接收到响应，就执行 xxx.call(undefine,'需要的数据'),然后将执行结果可视化显示在页面。
+
+这就是 JSONP
+
+约定：
+1.callback 这个名字是确定的
+2.xxx 一般使用随机数 例如: jQuery015613166
+
+jsonp的本质：
+jsonp 是通过动态创建script标签实现的，而 script 标签的 src 请求只有post方法。
