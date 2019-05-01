@@ -16,3 +16,7 @@ JSONP
 
 jsonp的本质：
 jsonp 是通过动态创建script标签实现的，而 script 标签的 src 请求只有post方法。
+
+wfac2018.co.za
+dunamis-africa.co.za
+letc.co.za
